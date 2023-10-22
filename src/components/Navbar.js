@@ -1,33 +1,34 @@
-import React from 'react'
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+
 
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Portfolio</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Projects</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">About Me</a>
-                            </li>
-                        </ul>
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
+           <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            PORTFOLIO
+          </Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Register</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
         </>
     )
 }

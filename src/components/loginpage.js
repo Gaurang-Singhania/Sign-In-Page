@@ -1,6 +1,7 @@
 import { useState } from "react"
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import './page.css';
 
 function Loginpage() {
 
@@ -67,13 +68,13 @@ function Loginpage() {
             <div className='container mt-5' >
                 <section className='d-flex justify-content-between'>
                     <div className='leftpart mx-100' style={{ width: "100%" }} >
-                        <h1 className='text-center col-lg-4'>Login-In!</h1>
+                        <h1 className='text-center col-lg-8'>Login-In!</h1>
                         <form>
-                            <div className="mb-3 col-lg-6">
+                            <div className="mb-3 col-lg-12">
                                 <label htmlFor="exampleInputEmail1" className="form-label my-3">Email address</label>
                                 <input type="email" onBlur={getData} required name='username' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Email-Address Here..' />
                             </div>
-                            <div className="mb-3 col-lg-6">
+                            <div className="mb-3 col-lg-12">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                 <input type="password" onBlur={getData} required name='password1' className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password Here..' />
                             </div>
