@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 function Mainpage() {
 
@@ -79,7 +80,7 @@ function Mainpage() {
                         </div>
                         <button type="submit" className="btn btn-primary" style={{ width: "150" }} onClick={submitData}>Sign Up</button>
                     </form>
-                    <p className='mt-4 fw-bold'>Already Registered <span>Sign-In</span></p>
+                    <p className='mt-4 fw-bold'>Already Registered <span><NavLink to='/loginpage'>Sign-In</NavLink></span></p>
                 </div>
                 <div className='rightPart mt-5'>
                     <div className='img mt-5'>

@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Mainpage from './components/Mainpage';
-import loginpage from './components/loginpage';
+import Loginpage from './components/Loginpage';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Mainpage />} />
-        <Route path='/' element={<loginpage />} />
+        <Route path='/Loginpage' element={<Loginpage />} />
       </Routes>
 
     </>

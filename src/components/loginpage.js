@@ -1,15 +1,14 @@
 import { useState } from "react"
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
-function loginpage() {
+function Loginpage() {
 
-    
+
     const [inputValue, setValue] = useState({
         username: "",
         password1: "",
     });
-
-  const [data,setData]=useState({});
 
     const getData = (e) => {
 
@@ -29,23 +28,37 @@ function loginpage() {
     const submitData = (e) => {
         e.preventDefault();
         console.log(inputValue);
-        
-        const {username,password1,password2,date}=inputValue;
 
-        if(username===""){
+        const getUserData = localStorage.getItem("user");
+        console.log(getUserData);
+
+        const { username, password1 } = inputValue;
+
+        if (username === "") {
             alert("Enter username");
         }
-        else if(!username.includes('@')){
+        else if (!username.includes('@')) {
             alert("Enter valid email address");
         }
-        else if(password1===""){
+        else if (password1 === "") {
             alert("Enter password");
         }
-        else{
-            alert("Login successfully")
-            console.log("logged in successfully")
+        else { 
 
-            localStorage.setItem("user",JSON.stringify([inputValue]));
+            if (getUserData && getUserData.length) {
+                const userData = JSON.parse(getUserData);
+
+                console.log(userData);
+                //console.log(userData.username);
+
+                if (userData.username === username && userData.password1 === password1) {
+                    alert("Sign in Successfull");
+                    console.log("logged in successfully");
+                }
+                else {
+                    alert("Enter Correct Credentials!!");
+                }
+            }
         }
     }
 
@@ -66,7 +79,7 @@ function loginpage() {
                             </div>
                             <button type="submit" className="btn btn-primary" style={{ width: "150" }} onClick={submitData}>Login</button>
                         </form>
-                        <p className='mt-4 fw-bold'>Haven't Registered<span>Register-Now</span></p>
+                        <p className='mt-4 fw-bold'>Haven't Registered <span><NavLink to='/'>Register-Now</NavLink></span></p>
                     </div>
                     <div className='rightPart mt-5'>
                         <div className='img mt-5'>
@@ -79,4 +92,4 @@ function loginpage() {
     )
 }
 
-export default loginpage
+export default Loginpage
