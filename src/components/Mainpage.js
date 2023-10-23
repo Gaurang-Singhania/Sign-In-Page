@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
 import './page.css';
 
 function Mainpage() {
@@ -52,7 +53,12 @@ function Mainpage() {
             alert("Enter correct password");
         }
         else {
-            alert("Registered successfully")
+            <Stack sx={{ width: '100%' }} spacing={2}>
+                <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    This is a success alert — <strong>check it out!</strong>
+                </Alert>
+            </Stack>
             console.log("Registered successfully")
 
             localStorage.setItem("user", JSON.stringify([inputValue]));
