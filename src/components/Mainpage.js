@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
+import swal from 'sweetalert';
 import './page.css';
 
 function Mainpage() {
@@ -42,6 +40,9 @@ function Mainpage() {
         }
         else if (!emailRegex.test(username)) {
             alert("Enter valid email address");
+            document.getElementById('exampleInputEmail1').value = '';
+            document.getElementById('exampleInputPassword1').value = '';
+            document.getElementById('exampleInputPassword2').value = '';
         }
         else if (password1 === "") {
             alert("Enter password");
@@ -51,17 +52,21 @@ function Mainpage() {
         }
         else if (password1 != password2) {
             alert("Enter correct password");
+            document.getElementById('exampleInputPassword1').value = '';
+            document.getElementById('exampleInputPassword2').value = '';
         }
         else {
-            <Stack sx={{ width: '100%' }} spacing={2}>
-                <Alert severity="success">
-                    <AlertTitle>Success</AlertTitle>
-                    This is a success alert — <strong>check it out!</strong>
-                </Alert>
-            </Stack>
-            console.log("Registered successfully")
-
+            swal({
+                title: "Congratulations, !",
+                text: "You Have Registered Successfully!!!",
+                icon: "success",
+                button: "Login",
+                closeOnClickOutside: false,
+              }).then(function() {
+                window.location = "http://localhost:3000/Loginpage";
+            });;
             localStorage.setItem("user", JSON.stringify([inputValue]));
+
         }
     }
 
@@ -69,30 +74,30 @@ function Mainpage() {
         <div className='container mt-5' >
             <section className='d-flex justify-content-between'>
                 <div className='leftpart mx-100' style={{ width: "100%" }} >
-                    <h1 className='text-center col-lg-8'>Sign Up!</h1>
+                    <h1 className='text-center col-lg-8 im2'>Sign Up!</h1>
                     <form>
-                        <div className="mb-3 col-lg-12">
+                        <div className="mb-3 col-lg-12 im1">
                             <label htmlFor="exampleInputEmail1" className="form-label my-3">Email address</label>
                             <input type="email" onBlur={getData} required name='username' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Email-Address Here..' />
                         </div>
-                        <div className="mb-3 col-lg-12">
+                        <div className="mb-3 col-lg-12 im1">
                             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                             <input type="password" onBlur={getData} required name='password1' className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password Here..' />
                         </div>
-                        <div className="mb-3 col-lg-12">
+                        <div className="mb-3 col-lg-12 im1">
                             <label htmlFor="exampleInputPassword2" className="form-label">Confirm Password</label>
-                            <input type="password" onBlur={getData} required name='password2' className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password Here Again..' />
+                            <input type="password" onBlur={getData} required name='password2' className="form-control" id="exampleInputPassword2" placeholder='Enter Your Password Here Again..' />
                         </div>
-                        <div className="mb-3 col-lg-20 my-10">
+                        <div className="mb-3 col-lg-20 my-10 im1">
                             <input type="date" onBlur={getData} required name='date' />
                         </div>
-                        <button type="submit" className="btn btn-primary" style={{ width: "150" }} onClick={submitData}>Sign Up</button>
+                        <button type="submit" className="btn btn-primary im3" style={{ width: "150" }} onClick={submitData}>Sign Up</button>
                     </form>
-                    <p className='mt-4 fw-bold'>Already Registered <span><NavLink to='/loginpage'>Sign-In</NavLink></span></p>
+                    <p className='mt-4 fw-bold im3'>Already Registered <span><NavLink to='/Loginpage'>Sign-In</NavLink></span></p>
                 </div>
                 <div className='rightPart mt-5'>
                     <div className='img mt-5'>
-                        <img src='./registeration.jpg' style={{ maxWidth: 400 }} />
+                        <img src='./registeration.jpg' />
                     </div>
                 </div>
             </section>
