@@ -79,25 +79,25 @@ function Loginpage() {
     return (
         <>
             <div className='container mt-5' >
-                <section className='d-flex justify-content-between'>
+                <section className='contain d-flex justify-content-between'>
                     <div className='leftpart mx-100' style={{ width: "100%" }} >
-                        <h1 className='text-center col-lg-8 im2'>Login-In!</h1>
+                        <h1 className='text text-center col-lg-8 im2'>Login-In!</h1>
                         <form>
                             <div className="mb-3 col-lg-12 im1">
-                                <label htmlFor="exampleInputEmail1" className="form-label my-3">Email address</label>
+                                <label htmlFor="exampleInputEmail1" className="text form-label my-3">Email address</label>
                                 <input type="email" onBlur={getData} required name='username' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Email-Address Here..' />
                             </div>
                             <div className="mb-3 col-lg-12 im1">
-                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                <label htmlFor="exampleInputPassword1" className="text form-label">Password</label>
                                 <input type="password" onBlur={getData} required name='password1' className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password Here..' />
                             </div>
                             <button type="submit" className="btn btn-primary im3" style={{ width: "150" }} onClick={submitData}>Login</button>
                         </form>
-                        <p className='mt-4 fw-bold im3'>Haven't Registered <span><NavLink to='/'>Register-Now</NavLink></span></p>
+                        <p className='text mt-4 fw-bold im3'>Haven't Registered-<span><NavLink to='/'>Register-Now</NavLink></span></p>
                     </div>
-                    <div className='rightPart mt-5'>
+                    <div className='rightpart mt-5'>
                         <div className='img mt-5'>
-                            <img src='./registeration.jpg' style={{ maxWidth: 400 }} />
+                            <img src='./login.avif' style={{ maxWidth: 400 }} />
                         </div>
                     </div>
                 </section>

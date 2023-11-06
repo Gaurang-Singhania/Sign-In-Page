@@ -2,8 +2,22 @@
   margin: 0 auto;
   max-width: 400px;
   padding: 20px;
+}
+
+.rightpart {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+}
+.contain{
+  padding: 10px;
   border-radius: 10px;
+  background-color: black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.text{
+  color:white;
 }
 
 .mb-3 {
@@ -41,12 +55,12 @@
 
 .img img {
   max-width: 400px;
+  max-height: 300px;
+  margin-bottom: 20px;
+  border-radius: 25px;
   animation: moveImage 2s ease-in-out;
 }
 
-.img img:hover {
-  transform: scale(1.1);
-}
 
 .im1 {
   animation: slideFromLeft 2s ease-in-out;
@@ -97,7 +111,7 @@
     padding: 10px;
   }
 
-  .rightPart {
+  .rightpart {
     display: none;
   }
 }
