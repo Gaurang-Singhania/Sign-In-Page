@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
+            size="large" 
             edge="start"
             color="inherit"
             aria-label="menu"
@@ -24,8 +25,9 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             PORTFOLIO
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Register</Button>
+          <Button color="inherit" component={Link} to="http://localhost:3000/loginpage">Home</Button>
+          <Button color="inherit" component={Link} to="http://localhost:3000/loginpage">Login</Button>
+          <Button color="inherit" component={Link} to="http://localhost:3000/">Register</Button>
         </Toolbar>
       </AppBar>
     </Box>
